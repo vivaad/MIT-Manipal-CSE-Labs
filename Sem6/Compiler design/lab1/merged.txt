@@ -1,0 +1,75 @@
+// To count the number of lines and characters in a file. 
+#include <stdio.h>
+
+#include <stdlib.h>
+#include <stdio.h>
+
+#include <stdlib.h>
+int main(int argc, char* argv) {
+
+    FILE *sourceFile, *destFile;
+int main(int argc, char* argv[]){
+    char ch;
+	FILE *fp;
+    long fileSize, i;
+	int ch;
+
+	int lines = 0, characters=0;
+
+
+    sourceFile = fopen( "q1.c", "r");
+	if(argc !=2){
+    if (sourceFile == NULL) {
+		printf("Usage: %s <filename>\n", argv[0]);
+        printf("Error: Could not open source file.\n");
+        return 1;
+        return 1;
+	}
+    }
+
+
+	fp = fopen(argv[1], "r");
+
+	if(fp==NULL){
+    destFile = fopen("output.txt", "w");
+		perror("Error opening file!!");
+    if (destFile == NULL) {
+		return 1;
+        printf("Error: Could not open destination file.\n");
+	}
+        fclose(sourceFile);
+
+        return 1;
+	while((ch=getc(fp)) != EOF){
+    }
+		characters++;
+
+		if(ch=='\n')
+    fseek(sourceFile, 0, SEEK_END);
+			lines++;
+    fileSize = ftell(sourceFile); 
+	}
+
+
+    printf("The size of the file is: %ld bytes\n", fileSize);
+	fclose(fp);
+
+
+    for (i = fileSize - 1; i >= 0; i--) {
+    printf("Number of lines      : %d\n", lines);
+        fseek(sourceFile, i, SEEK_SET); 
+    printf("Number of characters : %d\n", characters);
+        ch = fgetc(sourceFile);      
+
+        fputc(ch, destFile);    
+    return 0;
+    }
+}
+
+    printf("File reversed successfully and stored in 'output.txt'.\n");
+
+    fclose(sourceFile);
+    fclose(destFile);
+
+    return 0;
+}
