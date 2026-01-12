@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="controls">
+    <label>Background:</label> <select id="bg"> 
+      <option>Yellow</option><option>Pink</option>
+      <option>LightBlue</option><option>White</option> 
+    </select><br> 
+    <label>Font:</label> <select id="font"> 
+      <option>Verdana</option><option>Arial</option>
+      <option>Georgia</option><option>"Comic Sans MS"</option> 
+    </select><br>
+    <input type="number" id="size" value="25"><br>
+    <label>Border:</label><br>
+    <input type="radio" name="border" value="none">None<br>
+    <input type="radio" name="border" value="double">Double<br>
+    <input type="radio" name="border" value="solid" checked>Solid<br><br>
+    <input type="checkbox" id="pic" checked>Add the Default Picture<br>
+    <label>Enter greeting text below:</label><br>
+    <textarea id="text">Happy Birthday, and many more</textarea><br>
+    <button type="button" id="update">Update</button>
+  </form>
+
+  <div id="card">
+    <p id="greet">Happy Birthday, and many more</p>
+    <img id="cake" src="cake.jpeg">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

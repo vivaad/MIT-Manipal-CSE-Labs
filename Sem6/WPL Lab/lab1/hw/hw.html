@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Population Table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2 style="text-align:center;">Population Data (from JSON)</h2>
+  <table id="populationTable">
+    <tr>
+      <th>Country</th>
+      <th>Year</th>
+      <th>Population (in Crores)</th>
+    </tr>
+  </table>
+
+  <script>
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        const table = document.getElementById("populationTable");
+
+        // Group data by country
+        const grouped = {};
+        data.forEach(item => {
+          if (!grouped[item.country]) grouped[item.country] = [];
+          grouped[item.country].push(item);
+        });
+
+        // Build rows with rowspan
+        for (let country in grouped) {
+          const rows = grouped[country];
+          rows.forEach((item, index) => {
+            const tr = document.createElement("tr");
+
+            // First row gets the country cell with rowspan
+            if (index === 0) {
+              const countryCell = document.createElement("td");
+              countryCell.textContent = country;
+              countryCell.rowSpan = rows.length;
+              countryCell.className = country.toLowerCase(); // india / usa / uk
+              tr.appendChild(countryCell);
+            }
+
+            // Year cell
+            const yearCell = document.createElement("td");
+            yearCell.textContent = item.year;
+            yearCell.className = "year";
+            tr.appendChild(yearCell);
+
+            // Population cell
+            const popCell = document.createElement("td");
+            popCell.textContent = item.population;
+            popCell.className = "population";
+            tr.appendChild(popCell);
+
+            table.appendChild(tr);
+          });
+        }
+      })
+      .catch(error => console.error("Error loading JSON:", error));
+  </script>
+
+</body>
+</html>

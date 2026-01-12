@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+th {
+  background-color: red;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+}
+
+td {
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+}
+
+/* Specific styling for year and population cells */
+.year {
+  background-color: #add8e6; /* light blue */
+}
+
+.population {
+  background-color: green;
+  color: white;
+}
+
+/* Country column colors */
+.india {
+  background-color: #fffacd; /* light yellow */
+}
+
+.usa {
+  background-color: #ffcccb; /* light red/pink */
+}
+
+.uk {
+  background-color: #d8bfd8; /* light purple */
+}

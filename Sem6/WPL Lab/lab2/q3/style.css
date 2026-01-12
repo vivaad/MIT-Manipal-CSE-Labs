@@ -1,0 +1,14 @@
+body {
+  display: flex;
+  gap: 20px;
+  background-color: lightgoldenrodyellow;
+}
+#card {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+}
+#cake {
+  width: 50%;
+  padding-left: auto;
+}

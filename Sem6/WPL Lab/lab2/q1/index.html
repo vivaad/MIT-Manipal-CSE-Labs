@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <table>
+      <tr><td>A1</td><td>A2</td><td>A3</td></tr>
+      <tr><td>B1</td><td>B2</td><td>B3</td></tr>
+      <tr><td>C1</td><td>C2</td><td><img src="cake.jpeg" alt="Cake"></td></tr>
+    </table>
+    <!-- <img src="cake.jpeg" alt="Cake"> -->
+  </div>
+  <button id="move">Move</button>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script >
+    $("#move").click(() => {
+        $("#container").css("left", "0");
+    });
+  </script>
+</body>
+</html>

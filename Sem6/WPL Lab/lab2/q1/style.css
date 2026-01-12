@@ -1,0 +1,18 @@
+table {
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid #000;
+  padding: 10px;
+}
+tr:nth-child(even) {
+  background: orange;
+}
+tr:nth-child(odd) {
+  background: orangered;
+}
+#container {
+  position: relative;
+  left: 100%;
+  transition: left 2s;
+}
