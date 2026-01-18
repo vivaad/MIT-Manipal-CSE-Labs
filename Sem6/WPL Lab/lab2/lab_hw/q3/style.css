@@ -1,0 +1,16 @@
+.box {
+position: relative;
+width: 500px;
+margin: auto;
+}
+img {
+width: 100%;
+}
+#text {
+position: absolute;
+top: 40%;
+left: -300px;
+color: white;
+background: black;
+padding: 10px;
+}
