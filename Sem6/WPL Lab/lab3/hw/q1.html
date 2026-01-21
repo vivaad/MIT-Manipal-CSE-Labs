@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Train Ticket Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-header text-center bg-primary text-white">
+      <h4>Train Ticket Booking</h4>
+    </div>
+
+    <div class="card-body">
+      <form>
+        <div class="row mb-3">
+          <div class="col">
+            <label class="form-label">From</label>
+            <input type="text" class="form-control" placeholder="Source">
+          </div>
+          <div class="col">
+            <label class="form-label">To</label>
+            <input type="text" class="form-control" placeholder="Destination">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col">
+            <label class="form-label">Journey Date</label>
+            <input type="date" class="form-control">
+          </div>
+          <div class="col">
+            <label class="form-label">Class</label>
+            <select class="form-select">
+              <option>General</option>
+              <option>Sleeper</option>
+              <option>AC</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Passenger Name</label>
+          <input type="text" class="form-control">
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-success">Book Ticket</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
