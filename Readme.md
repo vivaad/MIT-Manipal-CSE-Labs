@@ -1,12 +1,6 @@
 # Repository Overview
 
-This repository contains lab work for courses like Data Structures and Algorithms (DAA), Database Systems (DBS), and Embedded Systems (ES).
-
-## Contents
-
-*   **DAA-LAB**: Data Structures and Algorithms lab assignments in C.
-*   **DBS**: Database Systems labs with SQL queries and scripts.
-*   **ES-Lab**: Embedded Systems labs with ARM assembly code.
+This repository contains lab work for lab courses of mit manipal cse 2023-27.
 
 ## Usage
 
