@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 
 int isKeyword(char *w) {
     char *k[] = {
