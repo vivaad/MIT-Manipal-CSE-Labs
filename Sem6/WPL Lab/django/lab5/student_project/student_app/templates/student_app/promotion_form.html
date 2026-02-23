@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotion Eligibility Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-top: 50px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .result-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .result-label {
+            font-size: 3rem;
+            font-weight: bold;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            animation: fadeIn 0.5s;
+        }
+        .result-yes {
+            background-color: #d4edda;
+            color: #155724;
+            border: 3px solid #28a745;
+        }
+        .result-no {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 3px solid #dc3545;
+        }
+        .experience-info {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .btn-check {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 12px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .btn-check:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .icon {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🎯 Promotion Eligibility Checker</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="mb-4">
+                <label for="{{ form.employee_id.id_for_label }}" class="form-label">
+                    👤 Employee ID:
+                </label>
+                {{ form.employee_id }}
+                {% if form.employee_id.errors %}
+                    <div class="text-danger mt-1">{{ form.employee_id.errors }}</div>
+                {% endif %}
+            </div>
+            
+            <div class="mb-4">
+                <label for="{{ form.date_of_joining.id_for_label }}" class="form-label">
+                    📅 Date of Joining:
+                </label>
+                {{ form.date_of_joining }}
+                {% if form.date_of_joining.errors %}
+                    <div class="text-danger mt-1">{{ form.date_of_joining.errors }}</div>
+                {% endif %}
+            </div>
+            
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-check">
+                    Am I Eligible for Promotion?
+                </button>
+            </div>
+        </form>
+        
+        {% if result is not None %}
+        <div class="result-section">
+            <div class="experience-info">
+                <strong>Employee ID:</strong> {{ employee_id }}<br>
+                <strong>Years of Experience:</strong> {{ years_of_experience }} year{{ years_of_experience|pluralize }}
+            </div>
+            
+            <div class="result-label {% if result == 'YES' %}result-yes{% else %}result-no{% endif %}">
+                {% if result == "YES" %}
+                    ✅ {{ result }}
+                {% else %}
+                    ❌ {{ result }}
+                {% endif %}
+            </div>
+            
+            <p class="text-muted">
+                {% if result == "YES" %}
+                    Congratulations! You are eligible for promotion. 🎉
+                {% else %}
+                    You need more than 5 years of experience for promotion eligibility.
+                {% endif %}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
